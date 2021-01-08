@@ -2,13 +2,14 @@ package com.in28minutes.rest.webservices.restfulwebservices.filtering;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 
+//@JsonIgnoreProperties(value={"field1","field2"}) 也能达到去除返回变量的目的，这是static filtering
 @JsonFilter("SomeBeanFilter")
 public class SomeBean {
 	
 	private String field1;
 	
 	private String field2;
-	
+	// @JsonIgnore会完全移除response中的field3
 	private String field3;
 
 	public SomeBean(String field1, String field2, String field3) {

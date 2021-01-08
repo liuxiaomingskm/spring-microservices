@@ -44,7 +44,7 @@ public class UserJPAResource {
 
 		// "all-users", SERVER_PATH + "/users"
 		// retrieveAllUsers
-		EntityModel<User> resource = EntityModel.of(user.get());//new EntityModel<User>(user.get());
+		EntityModel<User> resource = EntityModel.of(user.get());//new EntityModel<User>(user.get());Both are O.K.
 
 		WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
 
@@ -52,7 +52,7 @@ public class UserJPAResource {
 
 		// HATEOAS
 
-		return resource;
+		return resource; // HATEOAS具有主动提供链接信息的扩展功能，从被动提供信息到主动提供相关链接和信息
 	}
 
 	@DeleteMapping("/jpa/users/{id}")

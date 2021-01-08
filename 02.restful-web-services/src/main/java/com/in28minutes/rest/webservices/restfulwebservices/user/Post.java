@@ -16,7 +16,7 @@ public class Post {
 	private Integer id;
 	private String description;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.LAZY) // 因为user和post是耦合关系 所以指定fetchType避免循环调用
 	@JsonIgnore
 	private User user;
 	

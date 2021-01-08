@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(description="All details about the user.")
+@ApiModel(description="All details about the user.") //在api Doc中添加user的说明
 @Entity
 public class User {
 
@@ -26,10 +26,10 @@ public class User {
 	private String name;
 
 	@Past
-	@ApiModelProperty(notes="Birth date should be in the past")
+	@ApiModelProperty(notes="Birth date should be in the past") //在api Doc中添加这个字段的说明
 	private Date birthDate;
 	
-	@OneToMany(mappedBy="user")
+	@OneToMany(mappedBy="user") // the name of the field in Post
 	private List<Post> posts;
 
 	protected User() {

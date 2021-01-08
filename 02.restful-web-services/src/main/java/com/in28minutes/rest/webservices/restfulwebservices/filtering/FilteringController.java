@@ -39,7 +39,7 @@ public class FilteringController {
 		SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("field2", "field3");
 
 		FilterProvider filters = new SimpleFilterProvider().addFilter("SomeBeanFilter", filter);
-
+		//Dynamic filtering
 		MappingJacksonValue mapping = new MappingJacksonValue(list);
 
 		mapping.setFilters(filters);

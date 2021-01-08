@@ -68,7 +68,7 @@ public class UserResource {
 	//HATEOAS
 	
 	@PostMapping("/users")
-	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
+	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) { // @valid annotation comes from Javax Validation API
 		User savedUser = service.save(user);
 		// CREATED
 		// /user/{id}     savedUser.getId()
@@ -78,7 +78,7 @@ public class UserResource {
 			.path("/{id}")
 			.buildAndExpand(savedUser.getId()).toUri();
 		
-		return ResponseEntity.created(location).build();
+		return ResponseEntity.created(location).build(); // The status code for new creation is 201, and this will put location into the header for convenience.
 		
 	}
 }
