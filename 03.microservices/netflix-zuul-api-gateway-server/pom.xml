@@ -43,16 +43,18 @@
 			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
 
+<!-- used for distribution tracing, add ID for every request, so they could be traceable  -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
-
+<!-- used for centralized message including logging message, send message to RabbitMQ and then send message to Zipkin server -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
 		</dependency>
 
+<!-- the RabbitMQ use amqp protocol -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>

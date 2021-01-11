@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Bean;
 import brave.sampler.Sampler;
 
 @SpringBootApplication
+// enable feign and pass in the package we need to scan
 @EnableFeignClients("com.in28minutes.microservices.currencyconversionservice")
+// make the service be discovered by Eureka server
 @EnableDiscoveryClient
 public class CurrencyConversionServiceApplication {
 

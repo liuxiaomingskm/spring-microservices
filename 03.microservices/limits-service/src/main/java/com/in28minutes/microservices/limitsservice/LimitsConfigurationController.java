@@ -19,7 +19,7 @@ public class LimitsConfigurationController {
 				configuration.getMinimum());
 		return limitConfiguration;
 	}
-	
+	// Hystrix的作用是当有异常抛出的时候 会选择执行另一个方法 至少返回一个值 而不是让整个系统崩溃
 	@GetMapping("/fault-tolerance-example")
 	@HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
 	public LimitConfiguration retrieveConfiguration() {

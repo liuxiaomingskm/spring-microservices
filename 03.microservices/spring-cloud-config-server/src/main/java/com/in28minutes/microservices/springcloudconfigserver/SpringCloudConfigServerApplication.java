@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
+//to enable read properties from local files has to set @EnableConfigServer
 @EnableConfigServer
 @SpringBootApplication
 public class SpringCloudConfigServerApplication {

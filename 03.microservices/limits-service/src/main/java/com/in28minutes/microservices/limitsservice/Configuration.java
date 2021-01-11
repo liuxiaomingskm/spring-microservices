@@ -5,6 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties("limits-service")
+//ConigurationProperties is enough to register the bean, so component could be removed
+//"limits-service"必须和application.properties中的key前缀一致，表明springboot会读取application.properties
+//中所有前缀为limits-service的key-value pairs
 public class Configuration {
 	
 	private int minimum;

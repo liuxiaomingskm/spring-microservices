@@ -29,7 +29,8 @@ public class CurrencyConversionController {
 		Map<String, String> uriVariables = new HashMap<>();
 		uriVariables.put("from", from);
 		uriVariables.put("to", to);
-
+		
+		// map the response to the entity,因为url中from和to是动态的，所以创建map内含from,to两对键值来实时替换url中的from,to
 		ResponseEntity<CurrencyConversionBean> responseEntity = new RestTemplate().getForEntity(
 				"http://localhost:8000/currency-exchange/from/{from}/to/{to}", CurrencyConversionBean.class,
 				uriVariables);

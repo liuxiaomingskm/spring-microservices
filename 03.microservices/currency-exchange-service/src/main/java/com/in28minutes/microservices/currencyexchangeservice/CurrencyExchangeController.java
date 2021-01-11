@@ -13,6 +13,7 @@ public class CurrencyExchangeController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	//org.springframework.core.env.Environment
 	@Autowired
 	private Environment environment;
 	
@@ -25,8 +26,9 @@ public class CurrencyExchangeController {
 		
 		ExchangeValue exchangeValue = 
 				repository.findByFromAndTo(from, to);
-		
+		// 需要返回port给调用对象,从来知道是哪个instance返回的response
 		exchangeValue.setPort(
+				// local.server.port对应访问端口
 				Integer.parseInt(environment.getProperty("local.server.port")));
 		
 		logger.info("{}", exchangeValue);

@@ -14,6 +14,7 @@ public class ZuulLoggingFilter extends ZuulFilter{
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	// should the filter be implemented
 	@Override
 	public boolean shouldFilter() {
 		return true;
@@ -27,12 +28,12 @@ public class ZuulLoggingFilter extends ZuulFilter{
 				request, request.getRequestURI());
 		return null;
 	}
-
+// indicate when the filter works, before or after the request is executed
 	@Override
 	public String filterType() {
 		return "pre";
 	}
-
+// set the priority order of filter
 	@Override
 	public int filterOrder() {
 		return 1;

@@ -12,7 +12,7 @@ public class ExchangeValue {
 	@Id
 	private Long id;
 	
-	@Column(name="currency_from")
+	@Column(name="currency_from")  // 这里必须改成currency_from, 因为from是sql关键词不能用作列名
 	private String from;
 	
 	@Column(name="currency_to")
